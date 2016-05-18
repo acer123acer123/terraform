@@ -1,4 +1,4 @@
-resource "aws_instance" "jenkins" {
+resource "aws_instance" "tyler" {
   ami = "${lookup(var.amis, var.region)}"
   instance_type = "t2.micro"
   subnet_id = "${aws_subnet.public.id}"
@@ -6,7 +6,7 @@ resource "aws_instance" "jenkins" {
   key_name = "${aws_key_pair.deployer.key_name}"
   source_dest_check = false
   tags = { 
-    Name = "jenkins"
+    Name = "tyler"
   }
   connection {
     user = "ec2-user"
