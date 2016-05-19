@@ -21,7 +21,7 @@ resource "aws_instance" "tyler" {
       "git clone https://github.com/acer123acer123/tyler.git ",
       "cd tyler",
       "sudo docker build -t christopherryan/tyler:v1 .",
-      "docker run --name=tyler -d -p 80:80 christopherryan/tyler:v1"
+      "sudo docker run --name=tyler -d -p 80:80 christopherryan/tyler:v1"
     ]
   }
 }
