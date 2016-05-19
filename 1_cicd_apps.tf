@@ -16,10 +16,11 @@ resource "aws_instance" "tyler" {
     inline = [
       "sudo yum update -y ",
       "sudo yum install -y git docker",
+      "sudo usermod -aG docker ec2-user",
       "sudo service docker start",
       "git clone https://github.com/acer123acer123/tyler.git ",
       "cd tyler",
-      "sleep 10; docker build -t christopherryan/tyler:v1 .",
+      "sudo docker build -t christopherryan/tyler:v1 .",
       "docker run --name=tyler -d -p 80:80 christopherryan/tyler:v1"
     ]
   }
